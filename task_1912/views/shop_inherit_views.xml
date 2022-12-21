@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="option_preferred_date_website" inherit_id="website_sale.total">
+        <xpath expr="//tr[@id='order_total']" position="after">
+<!--                <tr id="preferred_time" >-->
+<!--                    <td class="text-right"><strong>Preferred Time:</strong></td>-->
+<!--                    <td class="text-xl-right">-->
+<!--                        <t t-foreach="self.env['preferred.time'].search()" t-as="p_time">-->
+<!--                            <t t-esc="p_time"/>-->
+<!--                        </t>-->
+<!--                    </td>-->
+<!--                </tr>-->
+
+<!--                          <select class="form-control" id="preferred_time" t-attf-name="website_sale_order.preferred_time">-->
+<!--                            <option t-attf-value="9_12am">9-12 am</option>-->
+<!--                            <option t-attf-value="1_6pm">1-6 pm</option>-->
+<!--                            <option t-attf-value="6_10pm">6-10 pm</option>-->
+<!--                          </select>-->
+
+                <t t-set="default" t-value="website_sale_order.preferred_time.name"/>
+                <select class="form-control" id="preferred_time" >
+                    <option t-att-value="default" selected="True"><span t-esc="default"></span></option>
+                    <option t-foreach="env['preferred.time'].search([])"  class="option_class" t-as="variant" default="default" t-att-id ='variant.id' t-att-value="variant.id">
+                        <t t-esc="variant.name"/>
+                    </option>
+                </select>
+     </xpath>
+    </template>
+</odoo>

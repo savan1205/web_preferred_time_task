@@ -1,0 +1,22 @@
+<odoo>
+    <record id="res_config_settings_view_form_web" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.website.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <div id="website_tax_inclusion_setting" position="inside">
+                <div class="o_setting_right_pane">
+                    <label string="Preferred Time" for="preferred_time"/>
+                    <div class="text-muted">
+                        Show Preferred Time in Shop Payment
+                    </div>
+                    <div class="content-group">
+                        <div class="mt16">
+                            <field name="preferred_time" class="o_light_label" widget="boolean"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>
